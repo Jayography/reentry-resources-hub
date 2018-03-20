@@ -12,26 +12,39 @@ on [this page](https://github.com/CodeForNC/reentry-resources-hub/projects/2).
 
 ## Installation
 
-Make sure you have [Node](https://nodejs.org/en/) >= 4 installed (we strongly recommend using Node >= 6 and npm >= 3).
-We prefer to use the [yarn](https://yarnpkg.com/) npm client.
+This repository contains code for both server and client. To develop on your local machine, you will need to install ```node```, ```yarn``` and ```postgresql```. A recent version of ```node`` is required (version >= 7.6). 
 
+If you are using a Mac OSX, install these dependencies using [Homebrew](https://brew.sh/). Once you have homebrew installed, run these following commands in the an empty terminal shell.
+
+'''''
+brew install node
+brew install yarn
+brew install postgresql
 ````
-    git submodule init
-    yarn
-    yarn start
+
+Next, clone this Reentry Resources Hub repository (or a fork) and install dependencies.
 ````
 
 If you prefer to use npm, the equivalent procedure is:
 
 ````
-    git submodule init
-    npm install
-    npm start
+    git clone https://github.com/Open-NC/reentry-resources-hub.git
+    cd reentry-resources-hub
+    yarn
+````
+
+The descriptions and resource information are stored in a database on AWS. Open an [issue](https://github.com/Open-NC/reentry-resources-hub/issues) and mention [@ejaxon](https://github.com/ejaxon) to obtain credentials or learn how to create a copy of the database. Once you have your username and password, copy the ```server.env.example``` file to a new file with just the ```.env``` extension and replace the placeholder text with your username and password within the file.
+
+You may then run the site locally by running:
+
+````
+    yarn start
 ````
 
 The application is running at http://localhost:3000/. The server is also running, but at http://localhost:3001/.
 
-## Deployment
+
+## Deployment -- NOT VERIFIED
 
 In one terminal, run `node server/index.js`.  In another terminal, run `yarn build` or `npm run build`.
 
